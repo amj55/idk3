@@ -22,7 +22,7 @@
 
 int main(int, char const**)
 {
-    // Create the main window
+    // Create the main window fuck me
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 
     // Set the Icon
