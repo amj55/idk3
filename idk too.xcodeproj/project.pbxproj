@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E54F3E321ADE74400A3EDB3 /* urmom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E54F3E221ADE74400A3EDB3 /* urmom.png */; };
 		1EAA667021AC97D400A75E4A /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA666F21AC97D400A75E4A /* ResourcePath.mm */; };
 		1EAA667321AC97D400A75E4A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA667221AC97D400A75E4A /* main.cpp */; };
 		1EAA667621AC97D400A75E4A /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA667521AC97D400A75E4A /* cute_image.jpg */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E54F3E221ADE74400A3EDB3 /* urmom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = urmom.png; path = ../../../Downloads/urmom.png; sourceTree = "<group>"; };
 		1EAA666A21AC97D400A75E4A /* idk too.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idk too.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAA666E21AC97D400A75E4A /* idk too-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "idk too-Info.plist"; sourceTree = "<group>"; };
 		1EAA666F21AC97D400A75E4A /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		1EAA667421AC97D400A75E4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E54F3E221ADE74400A3EDB3 /* urmom.png */,
 				1EAA667521AC97D400A75E4A /* cute_image.jpg */,
 				1EAA667721AC97D400A75E4A /* nice_music.ogg */,
 				1EAA667921AC97D400A75E4A /* sansation.ttf */,
@@ -142,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E54F3E321ADE74400A3EDB3 /* urmom.png in Resources */,
 				1EAA667C21AC97D400A75E4A /* icon.png in Resources */,
 				1EAA667A21AC97D400A75E4A /* sansation.ttf in Resources */,
 				1EAA667821AC97D400A75E4A /* nice_music.ogg in Resources */,

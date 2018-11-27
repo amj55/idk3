@@ -34,7 +34,7 @@ int main(int, char const**)
 
     // Load a sprite to display
     sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
+    if (!texture.loadFromFile(resourcePath() + "urmom.png")) {
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(texture);
