@@ -22,8 +22,8 @@
 
 int main(int, char const**)
 {
-    // Create the main window fuck me
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    // Create the main window 
+    sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
     // Set the Icon
     sf::Image icon;
@@ -44,8 +44,6 @@ int main(int, char const**)
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
-    sf::Text text("Hello SFML", font, 50);
-    text.setFillColor(sf::Color::Black);
 
     // Load a music to play
     sf::Music music;
@@ -79,9 +77,6 @@ int main(int, char const**)
 
         // Draw the sprite
         window.draw(sprite);
-
-        // Draw the string
-        window.draw(text);
 
         // Update the window
         window.display();
