@@ -39,14 +39,7 @@ int main(int, char const**)
     }
     sf::Sprite sprite(texture);
 
-    // Create a graphical text to display
-    sf::Font font;
-    if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
-        return EXIT_FAILURE;
-    }
-    sf::Text text("Hello SFML", font, 50);
-    text.setFillColor(sf::Color::Black);
-
+  
     // Load a music to play
     sf::Music music;
     if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
@@ -80,8 +73,7 @@ int main(int, char const**)
         // Draw the sprite
         window.draw(sprite);
 
-        // Draw the string
-        window.draw(text);
+       
 
         // Update the window
         window.display();
