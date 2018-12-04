@@ -84,9 +84,8 @@ int main(int, char const**)
         yRed = yRed + speedRedY;
         
         circleRed.setPosition(xRed, yRed);
-        window.draw(circleRed);
+       
         
-        window.display();
         
         // Process events
         sf::Event event;
@@ -108,6 +107,8 @@ int main(int, char const**)
 
         // Draw the sprite
         window.draw(sprite);
+        
+         window.draw(circleRed);
 
         // Update the window
         window.display();
