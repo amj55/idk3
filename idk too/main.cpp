@@ -38,7 +38,20 @@ int main(int, char const**)
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(texture);
-
+    sf::CircleShape circleRed(30);
+    
+    circleRed.setFillColor(sf::Color(255, 0, 0));
+    
+    float xRed = 400;
+    float yRed = 300;
+    float speedRedX = .9;
+    float speedRedY = .9;
+    
+    
+    circleRed.setPosition(100, 100);
+   
+    
+        
     // Create a graphical text to display
     sf::Font font;
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
@@ -57,6 +70,24 @@ int main(int, char const**)
     // Start the game loop
     while (window.isOpen())
     {
+        
+        if (xRed + circleRed.getRadius() * 2 > window.getSize().x || xRed < 0)
+            speedRedX *= -1;
+        
+        if (yRed + circleRed.getRadius() * 2 > window.getSize().y || yRed < 0)
+            speedRedY *= -1;
+        
+        sf::RectangleShape ballShapeRed;
+        ballShapeRed.setSize(sf::Vector2f(30, 30)); // width/height
+        window.clear();
+        xRed = xRed + speedRedX;
+        yRed = yRed + speedRedY;
+        
+        circleRed.setPosition(xRed, yRed);
+        window.draw(circleRed);
+        
+        window.display();
+        
         // Process events
         sf::Event event;
         while (window.pollEvent(event))
