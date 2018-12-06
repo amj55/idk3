@@ -115,11 +115,11 @@ int main(int, char const**)
                 size -= 5;
             }
         }
-        
+        window.clear();
         Update();
 
         // Clear screen
-        window.clear();
+        
 
         // Draw the sprite
         window.draw(sprite);
