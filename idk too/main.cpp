@@ -16,6 +16,7 @@
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
@@ -37,6 +38,7 @@ void Update(){
 
 int main(int, char const**)
 {
+    //gru cifer
     
     // Create the main window 
     sf::RenderWindow window(sf::VideoMode(800, 600), "");
@@ -71,17 +73,19 @@ int main(int, char const**)
     // Play the music
     music.play();
 
+    float xRed = 400;
+    float yRed = 300;
+    int size = 30;
+    
     // Start the game loop
     while (window.isOpen())
     {
-        float xRed = 400;
-        float yRed = 300;
-        int size = 30;
+        
         sf::CircleShape circleRed(size);
         circleRed.setFillColor(sf::Color(255, 0, 0));
         circleRed.setPosition(xRed, yRed);
         
-        window.clear();
+      //  window.clear();
 
         // Process events
         sf::Event event;
@@ -92,11 +96,11 @@ int main(int, char const**)
                 window.close();
             }
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up){
-                yRed += 3;
+                yRed -= 3;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down){
-                yRed -= 3;
+                yRed += 3;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
@@ -115,13 +119,19 @@ int main(int, char const**)
                 size -= 5;
             }
         }
-        window.clear();
+        
+        
+        
+        std::cout << xRed << std::endl;
+        
         Update();
 
-        // Clear screen
         
+        // Clear screen
+        window.clear();
 
         // Draw the sprite
+        
         window.draw(sprite);
         
          window.draw(circleRed);
