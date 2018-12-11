@@ -26,12 +26,23 @@ float yRed = 300;
 int size = 30;
 sf::CircleShape circleRed(size);
 
+float xBlue = 500;
+float yBlue = 400;
+int sizeBlue = 30;
+sf::CircleShape circleBlue(size);
+
+
 
 void Update(){
     circleRed.setFillColor(sf::Color(255, 0, 0));
     circleRed.setPosition(xRed, yRed);
     circleRed.setFillColor(sf::Color(255, 0, 0));
     circleRed.setPosition(xRed, yRed);
+    
+    circleBlue.setFillColor(sf::Color(0, 255, 255));
+    circleBlue.setPosition(xBlue, yBlue);
+    circleBlue.setFillColor(sf::Color(0, 255, 255));
+    circleBlue.setPosition(xBlue, yBlue);
     
 
 }
@@ -73,9 +84,6 @@ int main(int, char const**)
     // Play the music
     music.play();
 
-    float xRed = 400;
-    float yRed = 300;
-    int size = 30;
     
     // Start the game loop
     while (window.isOpen())
@@ -85,7 +93,12 @@ int main(int, char const**)
         circleRed.setFillColor(sf::Color(255, 0, 0));
         circleRed.setPosition(xRed, yRed);
         
-      //  window.clear();
+        sf::CircleShape circleBlue(size);
+        circleBlue.setFillColor(sf::Color(0, 255, 255));
+        circleBlue.setPosition(xBlue, yBlue);
+        
+        
+      window.clear();
 
         // Process events
         sf::Event event;
@@ -96,19 +109,19 @@ int main(int, char const**)
                 window.close();
             }
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up){
-                yRed -= 3;
+                yRed -= 9;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down){
-                yRed += 3;
+                yRed += 9;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
-                xRed -= 3;
+                xRed -= 9;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right){
-                xRed += 3;
+                xRed += 9;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Add){
@@ -118,10 +131,41 @@ int main(int, char const**)
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Subtract){
                 size -= 5;
             }
+        
+        
+       
+  
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::W){
+                yBlue -= 9;
+            }
+            
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::S){
+                yBlue += 9;
+            }
+            
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::D){
+                xBlue -= 9;
+            }
+            
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::A){
+                xBlue += 9;
+            }
+            
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Q){
+                sizeBlue += 5;
+            }
+            
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::E){
+                sizeBlue -= 5;
+            }
         }
         
         
-        
+        std::cout << xBlue << std::endl;
+
         std::cout << xRed << std::endl;
         
         Update();
@@ -135,6 +179,8 @@ int main(int, char const**)
         window.draw(sprite);
         
          window.draw(circleRed);
+        
+         window.draw(circleBlue);
 
         // Update the window
         window.display();
