@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E0D49C621B5CEE70007F7E2 /* urmom.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E0D49C521B5CEE70007F7E2 /* urmom.png */; };
+		1E5CB43D21C460B900E13503 /* jiron3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CB43C21C460B900E13503 /* jiron3.png */; };
 		1EAA667021AC97D400A75E4A /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA666F21AC97D400A75E4A /* ResourcePath.mm */; };
 		1EAA667321AC97D400A75E4A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EAA667221AC97D400A75E4A /* main.cpp */; };
 		1EAA667621AC97D400A75E4A /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA667521AC97D400A75E4A /* cute_image.jpg */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1E0D49C521B5CEE70007F7E2 /* urmom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = urmom.png; path = ../../../Downloads/urmom.png; sourceTree = "<group>"; };
+		1E5CB43C21C460B900E13503 /* jiron3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jiron3.png; path = ../../../Downloads/jiron3.png; sourceTree = "<group>"; };
 		1EAA666A21AC97D400A75E4A /* idk too.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "idk too.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAA666E21AC97D400A75E4A /* idk too-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "idk too-Info.plist"; sourceTree = "<group>"; };
 		1EAA666F21AC97D400A75E4A /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		1EAA667421AC97D400A75E4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E5CB43C21C460B900E13503 /* jiron3.png */,
 				1E0D49C521B5CEE70007F7E2 /* urmom.png */,
 				1EAA667521AC97D400A75E4A /* cute_image.jpg */,
 				1EAA667721AC97D400A75E4A /* nice_music.ogg */,
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5CB43D21C460B900E13503 /* jiron3.png in Resources */,
 				1E0D49C621B5CEE70007F7E2 /* urmom.png in Resources */,
 				1EAA667C21AC97D400A75E4A /* icon.png in Resources */,
 				1EAA667A21AC97D400A75E4A /* sansation.ttf in Resources */,
