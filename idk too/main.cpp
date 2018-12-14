@@ -18,16 +18,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ResourcePath.hpp"
-/*
- void Update(){
- circleRed.setFillColor(sf::Color(255, 0, 0));
- circleRed.setPosition(xRed, yRed);
- circleRed.setFillColor(sf::Color(255, 0, 0));
- circleRed.setPosition(xRed, yRed);
- 
- 
- }
- */
+
+int jironX = 200;
+int jironY = 200;
+
 int main(int, char const**)
 {
     
@@ -57,6 +51,7 @@ int main(int, char const**)
     if (!j.loadFromFile(resourcePath() + "jiron3.png")){
         std::cout << "your jiron shits fucked"<< std::endl;}
     sf::Sprite jiron(j);
+    jiron.setPosition(jironX, jironY);
     
     // Start the game loop
     while (window.isOpen())
@@ -71,40 +66,35 @@ int main(int, char const**)
                 window.close();
             }
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up){
-                //yRed -= 3;
+                //jironY -= 3;
+                jiron.move(0,-10);
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down){
-                //yRed += 3;
+                //jironY += 3;
+                jiron.move(0,10);
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
-                //xRed -= 3;
+                //jironX -= 3;
+                jiron.move(-10,0);
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right){
-                //xRed += 3;
-            }
-            
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Add){
-                //size += 5;
-            }
-            
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Subtract){
-                //size -= 5;
+                //jironX += 3;
+                jiron.move(10,0);
             }
         }
         
-        
-        //Update();
-        
+        //jiron.setPosition(jironX, jironY);
         
         // Clear screen
         window.clear();
         
         // Draw the sprites
-        window.draw(jiron);
+        
         window.draw(background);
+        window.draw(jiron);
         
         
         // Update the window
