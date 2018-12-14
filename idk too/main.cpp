@@ -119,8 +119,7 @@ int main(int, char const**)
  
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
-        return EXIT_FAILURE;
-    }
+        return EXIT_FAILURE;}
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     sf::Texture back;
