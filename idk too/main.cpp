@@ -19,59 +19,54 @@
 #include <iostream>
 #include "ResourcePath.hpp"
 /*
-void Update(){
-    circleRed.setFillColor(sf::Color(255, 0, 0));
-    circleRed.setPosition(xRed, yRed);
-    circleRed.setFillColor(sf::Color(255, 0, 0));
-    circleRed.setPosition(xRed, yRed);
-    
-    circleBlue.setFillColor(sf::Color(0, 255, 255));
-    circleBlue.setPosition(xBlue, yBlue);
-    circleBlue.setFillColor(sf::Color(0, 255, 255));
-    circleBlue.setPosition(xBlue, yBlue);
-    
-
-}
-*/
+ void Update(){
+ circleRed.setFillColor(sf::Color(255, 0, 0));
+ circleRed.setPosition(xRed, yRed);
+ circleRed.setFillColor(sf::Color(255, 0, 0));
+ circleRed.setPosition(xRed, yRed);
+ 
+ 
+ }
+ */
 int main(int, char const**)
 {
     
-// Create the main window
+    // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "");
-
-//set icon sprite
+    
+    //set icon sprite
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
         return EXIT_FAILURE;}
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
-//play music
+    //play music
     sf::Music music;
     if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
         return EXIT_FAILURE;}
     music.play();
     
-// set background sprite
+    // set background sprite
     sf::Texture back;
     if (!back.loadFromFile(resourcePath() + "urmom.png")){
         std::cout << "your background shits fucked" << std::endl;}
     sf::Sprite background(back);
-   
-//set jiron sprite
+    
+    //set jiron sprite
     sf::Texture j;
     if (!j.loadFromFile(resourcePath() + "jiron3.png")){
         std::cout << "your jiron shits fucked"<< std::endl;}
     sf::Sprite jiron(j);
     
-// Start the game loop
+    // Start the game loop
     while (window.isOpen())
     {
         
-    // Process events
+        // Process events
         sf::Event event;
         while (window.pollEvent(event))
         {
-        // Close window: exit
+            // Close window: exit
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
@@ -84,7 +79,7 @@ int main(int, char const**)
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
-               //xRed -= 3;
+                //xRed -= 3;
             }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right){
@@ -98,22 +93,23 @@ int main(int, char const**)
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Subtract){
                 //size -= 5;
             }
+        }
         
         
-    //Update();
-
+        //Update();
         
-    // Clear screen
+        
+        // Clear screen
         window.clear();
-
-    // Draw the sprites
+        
+        // Draw the sprites
         window.draw(jiron);
         window.draw(background);
         
-
-    // Update the window
+        
+        // Update the window
         window.display();
     }
-
+    
     return EXIT_SUCCESS;
 }
