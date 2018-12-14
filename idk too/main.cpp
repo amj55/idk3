@@ -25,6 +25,11 @@ void Update(){
     circleRed.setFillColor(sf::Color(255, 0, 0));
     circleRed.setPosition(xRed, yRed);
     
+    circleBlue.setFillColor(sf::Color(0, 255, 255));
+    circleBlue.setPosition(xBlue, yBlue);
+    circleBlue.setFillColor(sf::Color(0, 255, 255));
+    circleBlue.setPosition(xBlue, yBlue);
+    
 
 }
 */
@@ -93,7 +98,6 @@ int main(int, char const**)
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Subtract){
                 //size -= 5;
             }
-        }
         
         
     //Update();
