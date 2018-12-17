@@ -15,7 +15,7 @@
 		1EAA667821AC97D400A75E4A /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA667721AC97D400A75E4A /* nice_music.ogg */; };
 		1EAA667A21AC97D400A75E4A /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA667921AC97D400A75E4A /* sansation.ttf */; };
 		1EAA667C21AC97D400A75E4A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA667B21AC97D400A75E4A /* icon.png */; };
-		BCD1DB1D21C2FCA700C45554 /* jiron3.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD1DB1C21C2FCA700C45554 /* jiron3.png */; };
+		1EB9ED7C21C81DBB006656F6 /* safe2tell.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB9ED7B21C81DBB006656F6 /* safe2tell.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		1EAA667721AC97D400A75E4A /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		1EAA667921AC97D400A75E4A /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		1EAA667B21AC97D400A75E4A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BCD1DB1C21C2FCA700C45554 /* jiron3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jiron3.png; path = ../../../Downloads/jiron3.png; sourceTree = "<group>"; };
+		1EB9ED7B21C81DBB006656F6 /* safe2tell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = safe2tell.png; path = ../../../Downloads/safe2tell.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +83,7 @@
 		1EAA667421AC97D400A75E4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1EB9ED7B21C81DBB006656F6 /* safe2tell.png */,
 				1E5CB43C21C460B900E13503 /* jiron3.png */,
 				1E0D49C521B5CEE70007F7E2 /* urmom.png */,
 				1EAA667521AC97D400A75E4A /* cute_image.jpg */,
@@ -151,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E5CB43D21C460B900E13503 /* jiron3.png in Resources */,
+				1EB9ED7C21C81DBB006656F6 /* safe2tell.png in Resources */,
 				1E0D49C621B5CEE70007F7E2 /* urmom.png in Resources */,
 				1EAA667C21AC97D400A75E4A /* icon.png in Resources */,
 				1EAA667A21AC97D400A75E4A /* sansation.ttf in Resources */,

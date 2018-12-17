@@ -3,11 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ResourcePath.hpp"
-
 int jironX = 200;
 int jironY = 200;
-
-//define shape
+bool endGameFlag = false;
 
 sf::CircleShape circleGreen(10);
 
@@ -25,18 +23,23 @@ sf::CircleShape circleGold(10);
 
 sf::CircleShape circlePurple(10);
 
-//define window
 sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
 
 void endGame() {
+   endGameFlag = true;
+    
+    sf::Texture safe;
+    if (!safe.loadFromFile(resourcePath() + "safe2tell.png")){
+        std::cout << "your background shits fucked" << std::endl;}
+    sf::Sprite background(safe);
     window.clear();
-    std::cout << "ajnsjdnjsnfskdbfnsajbfkjwehF" << std::endl;
-    window.close();
+    window.draw(background);
+    window.display();
+    sf::sleep(sf::milliseconds(5000));
 }
 
 void Update(){
-    
     
     circleGreen.setFillColor(sf::Color(0,255,0));
     
@@ -141,7 +144,7 @@ int main(int, char const**)
     }
     music.play();
     
-    while (window.isOpen())
+    while (window.isOpen() && !endGameFlag )
     {
         
         if (xGreen + circleGreen.getRadius() * 2 > window.getSize().x || xGreen < 0)
@@ -469,7 +472,7 @@ int main(int, char const**)
             endGame();
         }
         
-        window.clear();
+      //  window.clear();
         
         // Process events
         sf::Event event;
