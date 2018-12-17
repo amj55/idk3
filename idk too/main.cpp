@@ -25,10 +25,8 @@ sf::CircleShape circlePurple(10);
 
 sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
-
 void endGame() {
    endGameFlag = true;
-    
     sf::Texture safe;
     if (!safe.loadFromFile(resourcePath() + "safe2tell.png")){
         std::cout << "your background shits fucked" << std::endl;}
@@ -36,28 +34,18 @@ void endGame() {
     window.clear();
     window.draw(background);
     window.display();
-    sf::sleep(sf::milliseconds(5000));
+    sf::sleep(sf::milliseconds(3000));
 }
 
 void Update(){
-    
     circleGreen.setFillColor(sf::Color(0,255,0));
-    
     circleBlue.setFillColor(sf::Color(0,191,255));
-    
     circleYellow.setFillColor(sf::Color(255,255,0));
-    
     circlePie.setFillColor(sf::Color(75,0,199));
-    
     circleWhite.setFillColor(sf::Color(0, 0, 0));
-    
     circleOrange.setFillColor(sf::Color(255,165,0));
-    
     circleGold.setFillColor(sf::Color(255, 0, 0));
-    
     circlePurple.setFillColor(sf::Color(255,0,255));
-    
-    
 }
 
 int main(int, char const**)
