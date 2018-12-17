@@ -34,7 +34,7 @@ void endGame() {
     window.clear();
     window.draw(background);
     window.display();
-    sf::sleep(sf::milliseconds(3000));
+    sf::sleep(sf::milliseconds(2000));
 }
 
 void Update(){
