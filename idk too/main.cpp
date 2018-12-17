@@ -65,60 +65,60 @@ int main(int, char const**)
     // set speed and  starting point
     float xGreen = 500;
     float yGreen = 500;
-    float speedGreenX = .3;
-    float speedGreenY = .3;
+    float speedGreenX = .4;
+    float speedGreenY = .4;
     
     float xBlue = 300;
     float yBlue = 100;
-    float speedBlueX = .3;
-    float speedBlueY = .3;
+    float speedBlueX = .4;
+    float speedBlueY = .4;
     
     float xYellow = 50;
     float yYellow = 50;
-    float speedYellowX = .3;
-    float speedYellowY = .3;
+    float speedYellowX = .4;
+    float speedYellowY = .4;
     
     float xPie = 200;
     float yPie = 600;
-    float speedPieX = .3;
-    float speedPieY = .3;
+    float speedPieX = .4;
+    float speedPieY = .4;
     
     float xWhite = 100;
     float yWhite = 0;
-    float speedWhiteX = .3;
-    float speedWhiteY = .3;
+    float speedWhiteX = .4;
+    float speedWhiteY = .4;
     
     float xOrange = 40;
     float yOrange = 300;
-    float speedOrangeX = .3;
-    float speedOrangeY = .3;
+    float speedOrangeX = .4;
+    float speedOrangeY = .4;
     
     float xGold = 300;
     float yGold = 300;
-    float speedGoldX = .3;
-    float speedGoldY = .3;
+    float speedGoldX = .4;
+    float speedGoldY = .4;
     
     float xPurple = 10;
     float yPurple = 0;
-    float speedPurpleX = .3;
-    float speedPurpleY = .3;
+    float speedPurpleX = .4;
+    float speedPurpleY = .4;
     
     
-    circleGreen.setPosition(100,100);
+    circleGreen.setPosition(400,400);
     
-    circleBlue.setPosition(100, 100);
+    circleBlue.setPosition(400, 400);
     
-    circleYellow.setPosition(100, 100);
+    circleYellow.setPosition(400, 400);
     
-    circlePie.setPosition(100, 100);
+    circlePie.setPosition(400, 400);
     
-    circleWhite.setPosition(100, 100);
+    circleWhite.setPosition(400, 400);
     
-    circleOrange.setPosition(100, 100);
+    circleOrange.setPosition(400, 400);
     
-    circleGold.setPosition(100, 100);
+    circleGold.setPosition(400, 400);
     
-    circlePurple.setPosition(100, 100);
+    circlePurple.setPosition(400, 400);
     
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
@@ -146,114 +146,78 @@ int main(int, char const**)
     
     while (window.isOpen() && !endGameFlag )
     {
-        
         if (xGreen + circleGreen.getRadius() * 2 > window.getSize().x || xGreen < 0)
-            
             speedGreenX *= -1;
         if (yGreen + circleGreen.getRadius() * 2 > window.getSize().y || yGreen < 0)
-            
             speedGreenY *= -1;
         
-        
         if (xBlue + circleBlue.getRadius() * 2 > window.getSize().x || xBlue < 0)
-            
             speedBlueX *= -1;
         if (yBlue + circleBlue.getRadius() * 2 > window.getSize().y || yBlue < 0)
-            
             speedBlueY *= -1;
-        
-        
+
         if (xYellow + circleYellow.getRadius() * 2 > window.getSize().x || xYellow < 0)
-            
             speedYellowX *= -1;
         if (yYellow + circleYellow.getRadius() * 2 > window.getSize().y || yYellow < 0)
-            
             speedYellowY *= -1;
         
         if (xPie + circlePie.getRadius() * 2 > window.getSize().x || xPie < 0)
-            
             speedPieX *= -1;
         if (yPie + circlePie.getRadius() * 2 > window.getSize().y || yPie < 0)
-            
             speedPieY *= -1;
         
         if (xWhite + circleWhite.getRadius() * 2 > window.getSize().x || xWhite < 0)
-            
             speedWhiteX *= -1;
         if (yWhite + circleWhite.getRadius() * 2 > window.getSize().y || yWhite < 0)
-            
             speedWhiteY *= -1;
         
         if (xOrange + circleOrange.getRadius() * 2 > window.getSize().x || xOrange < 0)
-            
             speedOrangeX *= -1;
         if (yOrange + circleOrange.getRadius() * 2 > window.getSize().y || yOrange < 0)
-            
             speedOrangeY *= -1;
         
         if (xGold + circleGold.getRadius() * 2 > window.getSize().x || xGold < 0)
-            
             speedGoldX *= -1;
         if (yGold + circleGold.getRadius() * 2 > window.getSize().y || yGold < 0)
-            
             speedGoldY *= -1;
         
         if (xPurple + circlePurple.getRadius() * 2 > window.getSize().x || xPurple< 0)
-            
             speedPurpleX *= -1;
         if (yPurple + circlePurple.getRadius() * 2 > window.getSize().y || yPurple < 0)
-            
             speedPurpleY *= -1;
-        
-        
+
         sf::RectangleShape ballShapeGreen;
-        
         ballShapeGreen.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeBlue;
-        
         ballShapeBlue.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeYellow;
-        
         ballShapeYellow.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapePie;
-        
         ballShapeYellow.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeWhite;
-        
         ballShapeWhite.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeOrange;
-        
         ballShapeOrange.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeGold;
-        
         ballShapeGold.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapePurple;
-        
         ballShapePurple.setSize(sf::Vector2f(10,10)); // width/height
         
         ballShapeGreen.setPosition(circleGreen.getPosition());
-        
         ballShapeBlue.setPosition(circleBlue.getPosition());
-        
         ballShapeYellow.setPosition(circleYellow.getPosition());
-        
         ballShapePie.setPosition(circlePie.getPosition());
-        
         ballShapeWhite.setPosition(circleWhite.getPosition());
-        
         ballShapeOrange.setPosition(circleOrange.getPosition());
-        
         ballShapeGold.setPosition(circleGold.getPosition());
-        
         ballShapePurple.setPosition(circlePurple.getPosition());
-        
         
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapeBlue.getGlobalBounds())) {
             speedGreenX *= -1;
@@ -471,33 +435,25 @@ int main(int, char const**)
         if (jiron.getGlobalBounds().intersects(ballShapeGreen.getGlobalBounds())) {
             endGame();
         }
-        
-      //  window.clear();
-        
-        // Process events
+
         sf::Event event;
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed) {
-                window.close();
-            }
+                window.close();}
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up){
-                jiron.move(0,-10);
-            }
+                jiron.move(0,-10); }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down){
-                jiron.move(0,10);
-            }
+                jiron.move(0,10);}
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
-                jiron.move(-10,0);
-            }
+                jiron.move(-10,0);}
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right){
-                jiron.move(10,0);
-            }
-            
+                jiron.move(10,0);}
         }
+        
         Update();
         window.clear();
         xGreen = xGreen + speedGreenX;
