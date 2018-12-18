@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ResourcePath.hpp"
-int jironX = 200;
+int jironX = 600;
 int jironY = 200;
 bool endGameFlag = false;
 
