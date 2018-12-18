@@ -1,8 +1,10 @@
+
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ResourcePath.hpp"
-int jironX = 600;
+
+int jironX = 200;
 int jironY = 200;
 
 bool endGameFlag =  false;
@@ -69,6 +71,7 @@ sf::CircleShape circleGold(10);
 
 sf::CircleShape circlePurple(10);
 
+//define window
 sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
 void winGame(){
@@ -96,37 +99,46 @@ void endGame() {
 }
 
 void Update(){
+    
+    
     circleGreen.setFillColor(sf::Color(0,255,0));
+    
     circleBlue.setFillColor(sf::Color(0,191,255));
+    
     circleYellow.setFillColor(sf::Color(255,255,0));
+    
     circlePie.setFillColor(sf::Color(75,0,199));
+    
     circleWhite.setFillColor(sf::Color(0, 0, 0));
+    
     circleOrange.setFillColor(sf::Color(255,165,0));
+    
     circleGold.setFillColor(sf::Color(255, 0, 0));
+    
     circlePurple.setFillColor(sf::Color(255,0,255));
     
     speedGreenX = speed;
     speedGreenY = speed;
-
-
+    
+    
     speedBlueX = speed;
     speedBlueY = speed;
-
+    
     speedYellowX = speed;
     speedYellowY = speed;
-
+    
     speedPieX = speed;
     speedPieY = speed;
-
+    
     speedWhiteX = speed;
     speedWhiteY = speed;
-
+    
     speedOrangeX = speed;
     speedOrangeY = speed;
-
+    
     speedGoldX = speed;
     speedGoldY = speed;
-
+    
     speedPurpleX = speed;
     speedPurpleY = speed;
     
@@ -135,7 +147,7 @@ void Update(){
 
 int main(int, char const**)
 {
-
+    
     circleGreen.setFillColor(sf::Color(0,255,0));
     
     circleBlue.setFillColor(sf::Color(0,191,255));
@@ -152,19 +164,21 @@ int main(int, char const**)
     
     circlePurple.setFillColor(sf::Color(255,0,255));
     
-    circleBlue.setPosition(400, 400);
+    circleGreen.setPosition(100,100);
     
-    circleYellow.setPosition(400, 400);
+    circleBlue.setPosition(100, 100);
     
-    circlePie.setPosition(400, 400);
+    circleYellow.setPosition(100, 100);
     
-    circleWhite.setPosition(400, 400);
+    circlePie.setPosition(100, 100);
     
-    circleOrange.setPosition(400, 400);
+    circleWhite.setPosition(100, 100);
     
-    circleGold.setPosition(400, 400);
+    circleOrange.setPosition(100, 100);
     
-    circlePurple.setPosition(400, 400);
+    circleGold.setPosition(100, 100);
+    
+    circlePurple.setPosition(100, 100);
     
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "icon.png")) {
@@ -208,7 +222,7 @@ int main(int, char const**)
             } else {
                 speedGreenY -= .1;
             }
-
+            
             if(speedBlueX > 0){
                 speedBlueX += .1;
             } else {
@@ -306,7 +320,7 @@ int main(int, char const**)
         
         if (yGreen + circleGreen.getRadius() * 2 > window.getSize().y || yGreen < 0)
             speedGreenY *= -1;
-    
+        
         if (xBlue + circleBlue.getRadius() * 2 > window.getSize().x || xBlue < 0)
             speedBlueX *= -1;
         
@@ -321,7 +335,7 @@ int main(int, char const**)
         
         if (xPie + circlePie.getRadius() * 2 > window.getSize().x || xPie < 0)
             speedPieX *= -1;
-            
+        
         if (yPie + circlePie.getRadius() * 2 > window.getSize().y || yPie < 0)
             speedPieY *= -1;
         
@@ -338,47 +352,67 @@ int main(int, char const**)
             speedOrangeY *= -1;
         
         if (xGold + circleGold.getRadius() * 2 > window.getSize().x || xGold < 0)
+            
             speedGoldX *= -1;
         if (yGold + circleGold.getRadius() * 2 > window.getSize().y || yGold < 0)
             speedGoldY *= -1;
         
         if (xPurple + circlePurple.getRadius() * 2 > window.getSize().x || xPurple< 0)
+            
             speedPurpleX *= -1;
         if (yPurple + circlePurple.getRadius() * 2 > window.getSize().y || yPurple < 0)
+            
             speedPurpleY *= -1;
-
+        
+        
         sf::RectangleShape ballShapeGreen;
+        
         ballShapeGreen.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeBlue;
+        
         ballShapeBlue.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeYellow;
+        
         ballShapeYellow.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapePie;
+        
         ballShapeYellow.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeWhite;
+        
         ballShapeWhite.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeOrange;
+        
         ballShapeOrange.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapeGold;
+        
         ballShapeGold.setSize(sf::Vector2f(10,10)); // width/height
         
         sf::RectangleShape ballShapePurple;
+        
         ballShapePurple.setSize(sf::Vector2f(10,10)); // width/height
         
         ballShapeGreen.setPosition(circleGreen.getPosition());
+        
         ballShapeBlue.setPosition(circleBlue.getPosition());
+        
         ballShapeYellow.setPosition(circleYellow.getPosition());
+        
         ballShapePie.setPosition(circlePie.getPosition());
+        
         ballShapeWhite.setPosition(circleWhite.getPosition());
+        
         ballShapeOrange.setPosition(circleOrange.getPosition());
+        
         ballShapeGold.setPosition(circleGold.getPosition());
+        
         ballShapePurple.setPosition(circlePurple.getPosition());
+        
         
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapeBlue.getGlobalBounds())) {
             speedGreenX *= -1;
@@ -386,54 +420,63 @@ int main(int, char const**)
             speedBlueX *= -1;
             speedBlueY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapeGreen.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
             speedGreenX *= -1;
             speedGreenY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapeBlue.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
             speedBlueX *= -1;
             speedBlueY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapePie.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
             speedPieX *= -1;
             speedPieY *= -1;
         }
+        
         if (ballShapeBlue.getGlobalBounds().intersects(ballShapePie.getGlobalBounds())) {
             speedBlueX *= -1;
             speedBlueY *= -1;
             speedPieX *= -1;
             speedPieY *= -1;
         }
+        
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapePie.getGlobalBounds())) {
             speedGreenX *= -1;
             speedGreenY *= -1;
             speedPieX *= -1;
             speedPieY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapePie.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
             speedPieX *= -1;
             speedPieY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapeGreen.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
             speedGreenX *= -1;
             speedGreenY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapeBlue.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
             speedBlueX *= -1;
             speedBlueY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapeYellow.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
@@ -447,6 +490,7 @@ int main(int, char const**)
             speedOrangeX *= -1;
             speedOrangeY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapeOrange.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
@@ -459,90 +503,105 @@ int main(int, char const**)
             speedOrangeX *= -1;
             speedOrangeY *= -1;
         }
+        
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapeOrange.getGlobalBounds())) {
             speedGreenX *= -1;
             speedGreenY *= -1;
             speedOrangeX *= -1;
             speedOrangeY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapeOrange.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
             speedOrangeX *= -1;
             speedOrangeY *= -1;
         }
+        
         if (ballShapeOrange.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedOrangeX *= -1;
             speedOrangeY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapePie.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedPieX *= -1;
             speedPieY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapeBlue.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedBlueX *= -1;
             speedBlueY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapeGold.getGlobalBounds())) {
             speedGreenX *= -1;
             speedGreenY *= -1;
             speedGoldX *= -1;
             speedGoldY *= -1;
         }
+        
         if (ballShapeGreen.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedGreenX *= -1;
             speedGreenY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapeGold.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedGoldX *= -1;
             speedGoldY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapeBlue.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedBlueX *= -1;
             speedBlueY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapePie.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedPieX *= -1;
             speedPieY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapeOrange.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedOrangeX *= -1;
             speedOrangeY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapeWhite.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedWhiteX *= -1;
             speedWhiteY *= -1;
             speedPurpleX *= -1;
             speedPurpleY *= -1;
         }
+        
         if (ballShapeYellow.getGlobalBounds().intersects(ballShapePurple.getGlobalBounds())) {
             speedYellowX *= -1;
             speedYellowY *= -1;
@@ -571,69 +630,103 @@ int main(int, char const**)
         if (jiron.getGlobalBounds().intersects(ballShapeGreen.getGlobalBounds())) {
             endGame();
         }
-
+        
+        window.clear();
+        
+        // Process events
         sf::Event event;
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed) {
-                window.close();}
+                window.close();
+            }
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up){
-                jiron.move(0,-10); }
+                jiron.move(0,-10);
+            }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down){
-                jiron.move(0,10);}
+                jiron.move(0,10);
+            }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left){
-                jiron.move(-10,0);}
+                jiron.move(-10,0);
+            }
             
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right){
-                jiron.move(10,0);}
+                jiron.move(10,0);
+            }
+            
         }
         //Update();
         window.clear();
         xGreen = xGreen + speedGreenX;
+        
         yGreen = yGreen + speedGreenY;
         
         xBlue = xBlue + speedBlueX;
+        
         yBlue = yBlue + speedBlueY;
         
         xYellow = xYellow + speedYellowX;
+        
         yYellow = yYellow + speedYellowY;
         
         xPie = xPie + speedPieX;
+        
         yPie = yPie + speedPieY;
         
         xWhite = xWhite + speedWhiteX;
+        
         yWhite = yWhite + speedWhiteY;
         
         xOrange = xOrange + speedOrangeX;
+        
         yOrange = yOrange + speedOrangeY;
         
         xGold = xGold + speedGoldX;
+        
         yGold = yGold + speedGoldY;
         
         xPurple = xPurple + speedPurpleX;
+        
         yPurple = yPurple + speedPurpleY;
         
         circleGreen.setPosition(xGreen, yGreen);
+        
         circleBlue.setPosition(xBlue, yBlue);
+        
         circleYellow.setPosition(xYellow, yYellow);
+        
         circlePie.setPosition(xPie, yPie);
+        
         circleWhite.setPosition(xWhite, yWhite);
+        
         circleOrange.setPosition(xOrange, yOrange);
+        
         circleGold.setPosition(xGold, yGold);
+        
         circlePurple.setPosition(xPurple, yPurple);
         
         window.draw(background);
+        
         window.draw(jiron);
+        
         window.draw(circleGreen);
+        
         window.draw(circleBlue);
+        
         window.draw(circleYellow);
+        
         window.draw(circlePie);
+        
         window.draw(circleWhite);
+        
         window.draw(circleOrange);
+        
         window.draw(circleGold);
+        
         window.draw(circlePurple);
+        
         window.display();
     }
     return EXIT_SUCCESS;
