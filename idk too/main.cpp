@@ -7,6 +7,52 @@
 int jironX = 200;
 int jironY = 200;
 
+bool endGameFlag =  false;
+
+float speed = .1;
+
+float xGreen = 500;
+float yGreen = 500;
+float speedGreenX = speed;
+float speedGreenY = speed;
+
+float xBlue = 300;
+float yBlue = 100;
+float speedBlueX = speed;
+float speedBlueY = speed;
+
+float xYellow = 50;
+float yYellow = 50;
+float speedYellowX = speed;
+float speedYellowY = speed;
+
+float xPie = 200;
+float yPie = 600;
+float speedPieX = speed;
+float speedPieY = speed;
+
+float xWhite = 100;
+float yWhite = 0;
+float speedWhiteX = speed;
+float speedWhiteY = speed;
+
+float xOrange = 40;
+float yOrange = 300;
+float speedOrangeX = speed;
+float speedOrangeY = speed;
+
+float xGold = 300;
+float yGold = 300;
+float speedGoldX = speed;
+float speedGoldY = speed;
+
+float xPurple = 10;
+float yPurple = 0;
+float speedPurpleX = speed;
+float speedPurpleY = speed;
+
+sf::Clock clock2;
+
 //define shape
 
 sf::CircleShape circleGreen(10);
@@ -28,11 +74,28 @@ sf::CircleShape circlePurple(10);
 //define window
 sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
+void winGame(){
+    
+    sf::Texture pew;
+    if (!pew.loadFromFile(resourcePath() + "pew.jpg")){
+        std::cout << "your background shits fucked" << std::endl;}
+    sf::Sprite background(pew);
+    window.clear();
+    window.draw(background);
+    window.display();
+    sf::sleep(sf::milliseconds(2500));
+}
 
 void endGame() {
+    endGameFlag = true;
+    sf::Texture safe;
+    if (!safe.loadFromFile(resourcePath() + "safe2tell.png")){
+        std::cout << "your background shits fucked" << std::endl;}
+    sf::Sprite background(safe);
     window.clear();
-    std::cout << "ajnsjdnjsnfskdbfnsajbfkjwehF" << std::endl;
-    window.close();
+    window.draw(background);
+    window.display();
+    sf::sleep(sf::milliseconds(2000));
 }
 
 void Update(){
@@ -54,52 +117,52 @@ void Update(){
     
     circlePurple.setFillColor(sf::Color(255,0,255));
     
+    speedGreenX = speed;
+    speedGreenY = speed;
+
+
+    speedBlueX = speed;
+    speedBlueY = speed;
+
+    speedYellowX = speed;
+    speedYellowY = speed;
+
+    speedPieX = speed;
+    speedPieY = speed;
+
+    speedWhiteX = speed;
+    speedWhiteY = speed;
+
+    speedOrangeX = speed;
+    speedOrangeY = speed;
+
+    speedGoldX = speed;
+    speedGoldY = speed;
+
+    speedPurpleX = speed;
+    speedPurpleY = speed;
+    
     
 }
 
 int main(int, char const**)
 {
-    // set speed and  starting point
-    float xGreen = 500;
-    float yGreen = 500;
-    float speedGreenX = .3;
-    float speedGreenY = .3;
+
+    circleGreen.setFillColor(sf::Color(0,255,0));
     
-    float xBlue = 300;
-    float yBlue = 100;
-    float speedBlueX = .3;
-    float speedBlueY = .3;
+    circleBlue.setFillColor(sf::Color(0,191,255));
     
-    float xYellow = 50;
-    float yYellow = 50;
-    float speedYellowX = .3;
-    float speedYellowY = .3;
+    circleYellow.setFillColor(sf::Color(255,255,0));
     
-    float xPie = 200;
-    float yPie = 600;
-    float speedPieX = .3;
-    float speedPieY = .3;
+    circlePie.setFillColor(sf::Color(75,0,199));
     
-    float xWhite = 100;
-    float yWhite = 0;
-    float speedWhiteX = .3;
-    float speedWhiteY = .3;
+    circleWhite.setFillColor(sf::Color(0, 0, 0));
     
-    float xOrange = 40;
-    float yOrange = 300;
-    float speedOrangeX = .3;
-    float speedOrangeY = .3;
+    circleOrange.setFillColor(sf::Color(255,165,0));
     
-    float xGold = 300;
-    float yGold = 300;
-    float speedGoldX = .3;
-    float speedGoldY = .3;
+    circleGold.setFillColor(sf::Color(255, 0, 0));
     
-    float xPurple = 10;
-    float yPurple = 0;
-    float speedPurpleX = .3;
-    float speedPurpleY = .3;
-    
+    circlePurple.setFillColor(sf::Color(255,0,255));
     
     circleGreen.setPosition(100,100);
     
@@ -141,58 +204,157 @@ int main(int, char const**)
     }
     music.play();
     
-    while (window.isOpen())
+    while (window.isOpen() && !endGameFlag)
     {
         
+        sf::Time elapsedTime =  clock2.getElapsedTime();
+        
+        std::cout << elapsedTime.asSeconds() << std::endl;
+        if(elapsedTime.asSeconds() > 5){
+            if(speedGreenX > 0){
+                speedGreenX += .1;
+            } else {
+                speedGreenX -= .1;
+            }
+            
+            if(speedGreenY > 0){
+                speedGreenY += .1;
+            } else {
+                speedGreenY -= .1;
+            }
+
+            if(speedBlueX > 0){
+                speedBlueX += .1;
+            } else {
+                speedBlueX -= .1;
+            }
+            
+            if(speedYellowY > 0){
+                speedYellowY += .1;
+            } else {
+                speedYellowY -= .1;
+            }
+            
+            if(speedYellowX > 0){
+                speedYellowX += .1;
+            } else {
+                speedYellowX -= .1;
+            }
+            
+            if(speedYellowY > 0){
+                speedYellowY += .1;
+            } else {
+                speedYellowY -= .1;
+            }
+            
+            if(speedPieX > 0){
+                speedPieX += .1;
+            } else {
+                speedPieX -= .1;
+            }
+            
+            if(speedPieY > 0){
+                speedBlueY += .1;
+            } else {
+                speedPieY -= .1;
+            }
+            
+            if(speedWhiteX > 0){
+                speedWhiteX += .1;
+            } else {
+                speedWhiteX -= .1;
+            }
+            
+            if(speedWhiteY > 0){
+                speedWhiteY += .1;
+            } else {
+                speedWhiteY -= .1;
+            }
+            
+            if(speedOrangeX > 0){
+                speedOrangeX += .1;
+            } else {
+                speedOrangeX -= .1;
+            }
+            
+            if(speedOrangeY > 0){
+                speedWhiteY += .1;
+            } else {
+                speedOrangeY -= .1;
+            }
+            
+            if(speedGoldX > 0){
+                speedGoldX += .1;
+            } else {
+                speedGoldX -= .1;
+            }
+            
+            if(speedGoldY > 0){
+                speedGoldY += .1;
+            } else {
+                speedGoldY -= .1;
+            }
+            
+            if(speedPurpleX > 0){
+                speedPurpleX += .1;
+            } else {
+                speedPurpleX -= .1;
+            }
+            
+            if(speedPurpleY > 0){
+                speedPurpleY += .1;
+            } else {
+                
+                speedPurpleY -= .1;
+            }
+            
+            clock2.restart();
+            elapsedTime =  clock2.getElapsedTime();
+            std::cout << speed << std::endl;
+            std::cout << "time" << std::endl;
+        }
+        
+        
         if (xGreen + circleGreen.getRadius() * 2 > window.getSize().x || xGreen < 0)
-            
             speedGreenX *= -1;
+        
         if (yGreen + circleGreen.getRadius() * 2 > window.getSize().y || yGreen < 0)
-            
             speedGreenY *= -1;
-        
-        
+    
         if (xBlue + circleBlue.getRadius() * 2 > window.getSize().x || xBlue < 0)
-            
             speedBlueX *= -1;
+        
         if (yBlue + circleBlue.getRadius() * 2 > window.getSize().y || yBlue < 0)
-            
             speedBlueY *= -1;
         
-        
         if (xYellow + circleYellow.getRadius() * 2 > window.getSize().x || xYellow < 0)
-            
             speedYellowX *= -1;
+        
         if (yYellow + circleYellow.getRadius() * 2 > window.getSize().y || yYellow < 0)
-            
             speedYellowY *= -1;
         
         if (xPie + circlePie.getRadius() * 2 > window.getSize().x || xPie < 0)
-            
             speedPieX *= -1;
-        if (yPie + circlePie.getRadius() * 2 > window.getSize().y || yPie < 0)
             
+        if (yPie + circlePie.getRadius() * 2 > window.getSize().y || yPie < 0)
             speedPieY *= -1;
         
         if (xWhite + circleWhite.getRadius() * 2 > window.getSize().x || xWhite < 0)
-            
             speedWhiteX *= -1;
+        
         if (yWhite + circleWhite.getRadius() * 2 > window.getSize().y || yWhite < 0)
-            
             speedWhiteY *= -1;
         
         if (xOrange + circleOrange.getRadius() * 2 > window.getSize().x || xOrange < 0)
-            
             speedOrangeX *= -1;
+        
         if (yOrange + circleOrange.getRadius() * 2 > window.getSize().y || yOrange < 0)
-            
             speedOrangeY *= -1;
         
         if (xGold + circleGold.getRadius() * 2 > window.getSize().x || xGold < 0)
             
             speedGoldX *= -1;
         if (yGold + circleGold.getRadius() * 2 > window.getSize().y || yGold < 0)
-            
             speedGoldY *= -1;
         
         if (xPurple + circlePurple.getRadius() * 2 > window.getSize().x || xPurple< 0)
@@ -495,7 +657,7 @@ int main(int, char const**)
             }
             
         }
-        Update();
+        //Update();
         window.clear();
         xGreen = xGreen + speedGreenX;
         
