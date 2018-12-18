@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "ResourcePath.hpp"
+#include <cmath>
 
 int jironX = 200;
 int jironY = 200;
@@ -75,9 +76,9 @@ sf::CircleShape circlePurple(10);
 sf::RenderWindow window(sf::VideoMode(800, 600), "");
 
 void winGame(){
-    
+    endGameFlag = true;
     sf::Texture pew;
-    if (!pew.loadFromFile(resourcePath() + "pew.jpg")){
+    if (!pew.loadFromFile(resourcePath() + "mememan.png")){
         std::cout << "your background shits fucked" << std::endl;}
     sf::Sprite background(pew);
     window.clear();
@@ -211,6 +212,10 @@ int main(int, char const**)
         
         std::cout << elapsedTime.asSeconds() << std::endl;
         if(elapsedTime.asSeconds() > 5){
+            speed += .1;
+            if(abs(speed) > .6){
+                winGame();
+            }
             if(speedGreenX > 0){
                 speedGreenX += .1;
             } else {
